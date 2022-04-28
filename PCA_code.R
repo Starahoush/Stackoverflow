@@ -24,5 +24,8 @@ for (i in 1:100) {
 }
 PCAf <- t(data.matrix)
 
-res.pca <- prcomp(PCAf, scale = TRUE)#, center = F)
-fviz_pca_biplot(res.pca)
+res.pca_NC <- prcomp(PCAf, scale = TRUE, center = F)
+res.pca_C <- prcomp(PCAf, scale = TRUE, center = T)
+
+fviz_pca_biplot(res.pca_NC)
+fviz_pca_biplot(res.pca_C)
